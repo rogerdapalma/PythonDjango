@@ -1,4 +1,4 @@
-# como fazer para o servidor rodar?
+# Comandos para o aplicativo rodar
 - python -m venv venv
 - venv\scripts\activate
 - pip install -r requirements
