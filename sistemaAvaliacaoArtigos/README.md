@@ -1,5 +1,9 @@
 # Sistema Avaliação de Artigos
 
+<img width="1063" alt="telaPrincipal" src="https://github.com/alexandrezamberlan/python-django/assets/5599081/063d72b1-1a4c-4a14-a3fe-187d866bdefb">
+
+
+
 Sistema Web, hospedado na UFN, desenvolvido por alunos do curso de Ciência da Computação, para submissão e avaliação de artigos científicos.
 
 - apps

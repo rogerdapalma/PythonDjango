@@ -43,9 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
+    'mail_templated',
+    'widget_tweaks',
     
-    'usuario',
     'instituicao',
+    'tipo_evento',
+    'usuario',
 ]
 
 MIDDLEWARE = [
