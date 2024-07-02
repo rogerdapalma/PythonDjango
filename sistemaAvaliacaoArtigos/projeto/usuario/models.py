@@ -26,6 +26,10 @@ class MembroAtivoManager(UserManager):
         return super().get_queryset().filter(tipo='MEMBRO', is_active=True)
 
 
+class UsuarioAtivoManager(UserManager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_active=True)
+
 class Usuario(AbstractBaseUser):
     #1 campo da tupla fica no banco de dados
     #2 campo da tupla eh mostrado para o usuario
@@ -60,7 +64,7 @@ class Usuario(AbstractBaseUser):
     area = models.CharField('Área de pesquisa do usuário *', max_length=11, choices=AREA, help_text='Escolha área de interesse de trabalho')
     instituicao = models.CharField('Instituição a que pertence *', max_length=50, help_text='Registre a instituição, ou universidade, ou empresa')
     email = models.EmailField('Email', unique=True, max_length=100, db_index=True)
-    celular = models.CharField('Número celular com DDD *', max_length=11, help_text="Use DDD, por exemplo 55987619832")
+    celular = models.CharField('Número celular com DDD *', max_length=14, help_text="Use DDD, por exemplo 55987619832")
     cpf = models.CharField('CPF *', max_length=14, help_text='ATENÇÃO: Somente os NÚMEROS')    
     
     is_active = models.BooleanField('Ativo', default=False, help_text='Se ativo, o usuário tem permissão para acessar o sistema')
@@ -70,6 +74,7 @@ class Usuario(AbstractBaseUser):
     administradores = AdministradorAtivoManager()
     coordenadores = CoordenadorAtivoManager()
     membros = MembroAtivoManager()
+    usuarios_ativos = UsuarioAtivoManager()
 
     class Meta:
         ordering            =   ['-tipo','nome']

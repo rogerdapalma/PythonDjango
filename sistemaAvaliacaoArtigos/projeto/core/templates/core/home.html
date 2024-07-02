@@ -3,8 +3,8 @@
 {% load static %}
 
 {% block title %}     
-      <img src="{% static 'core/img/logo.jpg' %}"
-      class="img-fluid" style="max-width: 220px;">
+      {% comment %} <img src="{% static 'core/img/logo.jpg' %}"
+      class="img-fluid" style="max-width: 220px;"> {% endcomment %}
 {% endblock %}
 
 {% block content %}
@@ -49,7 +49,7 @@
                   <div class="panel panel-default">
                   <div class="panel-heading"><b>Avisos</b></div>
                   <div class="panel-body">
-                        
+                        {% include 'aviso//avisos.html' %}
                   </div>
                   </div>
             </div>
